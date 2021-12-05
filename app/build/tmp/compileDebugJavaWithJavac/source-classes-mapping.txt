@@ -1,0 +1,4 @@
+com/berisco/qrme/QRmeClasses/SquareImageView.java
+ com.berisco.qrme.QRmeClasses.SquareImageView
+com/berisco/qrme/BuildConfig.java
+ com.berisco.qrme.BuildConfig

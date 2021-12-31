@@ -28,16 +28,16 @@ class Adapter_Accounts(
     private val property_2: ArrayList<String>,
     private val property_3: ArrayList<String>,
     private val property_4: ArrayList<String>,
-    private val  property_6: ArrayList<String>,
+    private val property_6: ArrayList<String>,
     private val property_7: ArrayList<String>,
-    private val  property_8: ArrayList<String>,
+    private val property_8: ArrayList<String>,
     private val property_5: ArrayList<String>,
     private val title: ArrayList<String>,
     private val isempty: ArrayList<String>,
 
 
     private val ctx: Context// , val y : String ,
-        //	private val name:ArrayList<String>
+    //	private val name:ArrayList<String>
 ) : RecyclerView.Adapter<CustomViewHolder_All_Likes>() {
     override fun getItemCount(): Int {
         return title.size
@@ -103,11 +103,11 @@ class Adapter_Accounts(
             }
 
 
-            if( ((isempty[position]).toString()).equals("false") ){
+            if (((isempty[position]).toString()).equals("false")) {
                 holder.view.tv_acc_status.text = ("Active").toString()
 
 
-                holder.view.cp_cardview.setOnClickListener{
+                holder.view.cp_cardview.setOnClickListener {
 
                     val intent = Intent(ctx, Activity_QR_Code::class.java)
                     intent.putExtra("id", id[position].toString())
@@ -170,13 +170,21 @@ class Adapter_Accounts(
 //
 //                }
 
-            }
-            else
-            {
+            } else {
                 holder.view.tv_acc_status.text = ("Inactive").toString()
 
-                holder.view.cp_view.setBackgroundColor(ContextCompat.getColor(ctx, R.color.disable_grey))
-                holder.view.imageview_user_post_home_customview.setColorFilter(ContextCompat.getColor(ctx, R.color.disable_grey), android.graphics.PorterDuff.Mode.MULTIPLY);
+                holder.view.cp_view.setBackgroundColor(
+                    ContextCompat.getColor(
+                        ctx,
+                        R.color.disable_grey
+                    )
+                )
+                holder.view.imageview_user_post_home_customview.setColorFilter(
+                    ContextCompat.getColor(
+                        ctx,
+                        R.color.disable_grey
+                    ), android.graphics.PorterDuff.Mode.MULTIPLY
+                );
 
 //                if(((title[position]).toString()).equals("Crypto")){
 //                    holder.view.imageview_user_post_home_customview.setImageResource(R.drawable.crypto_logo)
@@ -223,11 +231,7 @@ class Adapter_Accounts(
             }
 
 
-        //            Picasso.get().load(All_Likes_userImage[position]).into(holder.view.iv_profile_all_like)
-
-
-
-
+            //            Picasso.get().load(All_Likes_userImage[position]).into(holder.view.iv_profile_all_like)
 
 
         } catch (ex: Exception) {
@@ -259,7 +263,6 @@ class Adapter_Accounts(
 //            return date
 //        }
 //    }
-
 
 
 }

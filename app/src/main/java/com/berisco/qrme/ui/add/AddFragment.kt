@@ -1,5 +1,7 @@
 package com.berisco.qrme.ui.add
 
+import android.content.Context
+import android.content.Context.INPUT_METHOD_SERVICE
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -8,7 +10,9 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.berisco.qrme.FirebaseDatabase
@@ -20,13 +24,14 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.fragment_add.*
 
+
 class AddFragment : Fragment() {
 
 
     var Socail: Any? = null
     var Crypto: Any? = null
     var Me: Any? = null
-//    var Business :Any? =null
+    var Business: Any? = null
 
 
     var twitter: Any? = null
@@ -62,12 +67,12 @@ class AddFragment : Fragment() {
     var me_isEmpty: Any? = null
 
 
-//    var business_businessFirstName :Any? =null
-//    var business_businessPhone:Any? =null
-//    var business_businessWebsite :Any? =null
-//    var business_businessLastName :Any? =null
-//    var business_businessEmail :Any? =null
-//    var business_isEmpty :Any? =null
+    var business_businessFirstName: Any? = null
+    var business_businessPhone: Any? = null
+    var business_businessWebsite: Any? = null
+    var business_businessLastName: Any? = null
+    var business_businessEmail: Any? = null
+    var business_isEmpty: Any? = null
 
     private lateinit var addViewModel: AddViewModel
 
@@ -102,22 +107,27 @@ class AddFragment : Fragment() {
                 // whenever text size changes it will check
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
 
-                    var x = urlValidate(et_personal_website.getText().toString())
-                    if (x) {
+                    try {
+                        var x = urlValidate(et_personal_website.getText().toString())
+                        if (x) {
 
-                        follow_link_et_personal_website.visibility = View.VISIBLE
+                            follow_link_et_personal_website.visibility = View.VISIBLE
 
-                        if (et_personal_website.text.isEmpty()) {
+                            if (et_personal_website.text.isEmpty()) {
+                                follow_link_et_personal_website.visibility = View.INVISIBLE
+                            }
+
+                        } else {
+                            // otherwise show error of invalid url
+                            if (et_personal_website.text.isNotEmpty()) {
+//                        et_personal_website.setError("Invalid Url")
+                            }
                             follow_link_et_personal_website.visibility = View.INVISIBLE
                         }
-
-                    } else {
-                        // otherwise show error of invalid url
-                        if (et_personal_website.text.isNotEmpty()) {
-//                        et_personal_website.setError("Invalid Url")
-                        }
-                        follow_link_et_personal_website.visibility = View.INVISIBLE
+                    } catch (ex: Exception) {
+                        println("Printingxx : Exception Gr564   $ex")
                     }
+
 
                 }
 
@@ -137,21 +147,29 @@ class AddFragment : Fragment() {
                 // whenever text size changes it will check
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
 
-                    var x = urlValidate(et_facebook.getText().toString())
-                    if (x) {
 
-                        follow_link_et_facebook.visibility = View.VISIBLE
+                    try {
 
-                        if (et_facebook.text.isEmpty()) {
+
+                        var x = urlValidate(et_facebook.getText().toString())
+                        if (x) {
+
+                            follow_link_et_facebook.visibility = View.VISIBLE
+
+                            if (et_facebook.text.isEmpty()) {
+                                follow_link_et_facebook.visibility = View.INVISIBLE
+                            }
+
+                        } else {
+                            // otherwise show error of invalid url
+                            if (et_facebook.text.isNotEmpty()) {
+//                        et_facebook.setError("Invalid Url")
+                            }
                             follow_link_et_facebook.visibility = View.INVISIBLE
                         }
 
-                    } else {
-                        // otherwise show error of invalid url
-                        if (et_facebook.text.isNotEmpty()) {
-//                        et_facebook.setError("Invalid Url")
-                        }
-                        follow_link_et_facebook.visibility = View.INVISIBLE
+                    } catch (ex: Exception) {
+                        println("Printingxx : Exception VR46   $ex")
                     }
 
                 }
@@ -172,22 +190,32 @@ class AddFragment : Fragment() {
                 // whenever text size changes it will check
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
 
-                    var x = urlValidate(et_twitter.getText().toString())
-                    if (x) {
 
-                        follow_link_et_twitter.visibility = View.VISIBLE
+                    try {
 
-                        if (et_twitter.text.isEmpty()) {
+
+                        var x = urlValidate(et_twitter.getText().toString())
+                        if (x) {
+
+                            follow_link_et_twitter.visibility = View.VISIBLE
+
+                            if (et_twitter.text.isEmpty()) {
+                                follow_link_et_twitter.visibility = View.INVISIBLE
+                            }
+
+                        } else {
+                            // otherwise show error of invalid url
+                            if (et_twitter.text.isNotEmpty()) {
+//                        et_twitter.setError("Invalid Url")
+                            }
                             follow_link_et_twitter.visibility = View.INVISIBLE
                         }
 
-                    } else {
-                        // otherwise show error of invalid url
-                        if (et_twitter.text.isNotEmpty()) {
-//                        et_twitter.setError("Invalid Url")
-                        }
-                        follow_link_et_twitter.visibility = View.INVISIBLE
+                    } catch (ex: Exception) {
+                        println("Printingxx : Exception FUERH49   $ex")
                     }
+
+
                 }
 
                 override fun afterTextChanged(s: Editable) {}
@@ -205,22 +233,29 @@ class AddFragment : Fragment() {
                 // whenever text size changes it will check
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
 
-                    var x = urlValidate(et_instagram.getText().toString())
-                    if (x) {
 
-                        follow_link_et_instagram.visibility = View.VISIBLE
+                    try {
+                        var x = urlValidate(et_instagram.getText().toString())
+                        if (x) {
 
-                        if (et_instagram.text.isEmpty()) {
+                            follow_link_et_instagram.visibility = View.VISIBLE
+
+                            if (et_instagram.text.isEmpty()) {
+                                follow_link_et_instagram.visibility = View.INVISIBLE
+                            }
+
+                        } else {
+                            // otherwise show error of invalid url
+                            if (et_instagram.text.isNotEmpty()) {
+//                        et_instagram.setError("Invalid Url")
+                            }
                             follow_link_et_instagram.visibility = View.INVISIBLE
                         }
-
-                    } else {
-                        // otherwise show error of invalid url
-                        if (et_instagram.text.isNotEmpty()) {
-//                        et_instagram.setError("Invalid Url")
-                        }
-                        follow_link_et_instagram.visibility = View.INVISIBLE
+                    } catch (ex: Exception) {
+                        println("Printingxx : Exception JHLKH39   $ex")
                     }
+
+
                 }
 
                 override fun afterTextChanged(s: Editable) {}
@@ -265,22 +300,29 @@ class AddFragment : Fragment() {
                 // whenever text size changes it will check
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
 
-                    var x = urlValidate(et_linkedin.getText().toString())
-                    if (x) {
 
-                        follow_link_et_linkedin.visibility = View.VISIBLE
+                    try {
+                        var x = urlValidate(et_linkedin.getText().toString())
+                        if (x) {
 
-                        if (et_linkedin.text.isEmpty()) {
+                            follow_link_et_linkedin.visibility = View.VISIBLE
+
+                            if (et_linkedin.text.isEmpty()) {
+                                follow_link_et_linkedin.visibility = View.INVISIBLE
+                            }
+
+                        } else {
+                            // otherwise show error of invalid url
+                            if (et_linkedin.text.isNotEmpty()) {
+//                        et_linkedin.setError("Invalid Url")
+                            }
                             follow_link_et_linkedin.visibility = View.INVISIBLE
                         }
-
-                    } else {
-                        // otherwise show error of invalid url
-                        if (et_linkedin.text.isNotEmpty()) {
-//                        et_linkedin.setError("Invalid Url")
-                        }
-                        follow_link_et_linkedin.visibility = View.INVISIBLE
+                    } catch (ex: Exception) {
+                        println("Printingxx : Exception BUJIO49   $ex")
                     }
+
+
                 }
 
                 override fun afterTextChanged(s: Editable) {}
@@ -298,22 +340,29 @@ class AddFragment : Fragment() {
                 // whenever text size changes it will check
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
 
-                    var x = urlValidate(et_whatsapp.getText().toString())
-                    if (x) {
 
-                        follow_link_et_whatsapp.visibility = View.VISIBLE
+                    try {
+                        var x = urlValidate(et_whatsapp.getText().toString())
+                        if (x) {
 
-                        if (et_whatsapp.text.isEmpty()) {
+                            follow_link_et_whatsapp.visibility = View.VISIBLE
+
+                            if (et_whatsapp.text.isEmpty()) {
+                                follow_link_et_whatsapp.visibility = View.INVISIBLE
+                            }
+
+                        } else {
+                            // otherwise show error of invalid url
+                            if (et_whatsapp.text.isNotEmpty()) {
+//                        et_whatsapp.setError("Invalid Url")
+                            }
                             follow_link_et_whatsapp.visibility = View.INVISIBLE
                         }
-
-                    } else {
-                        // otherwise show error of invalid url
-                        if (et_whatsapp.text.isNotEmpty()) {
-//                        et_whatsapp.setError("Invalid Url")
-                        }
-                        follow_link_et_whatsapp.visibility = View.INVISIBLE
+                    } catch (ex: Exception) {
+                        println("Printingxx : Exception UHHE3556   $ex")
                     }
+
+
                 }
 
                 override fun afterTextChanged(s: Editable) {}
@@ -331,22 +380,29 @@ class AddFragment : Fragment() {
                 // whenever text size changes it will check
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
 
-                    var x = urlValidate(et_snapchat.getText().toString())
-                    if (x) {
 
-                        follow_link_et_snapchat.visibility = View.VISIBLE
+                    try {
+                        var x = urlValidate(et_snapchat.getText().toString())
+                        if (x) {
 
-                        if (et_snapchat.text.isEmpty()) {
+                            follow_link_et_snapchat.visibility = View.VISIBLE
+
+                            if (et_snapchat.text.isEmpty()) {
+                                follow_link_et_snapchat.visibility = View.INVISIBLE
+                            }
+
+                        } else {
+                            // otherwise show error of invalid url
+                            if (et_snapchat.text.isNotEmpty()) {
+//                        et_snapchat.setError("Invalid Url")
+                            }
                             follow_link_et_snapchat.visibility = View.INVISIBLE
                         }
-
-                    } else {
-                        // otherwise show error of invalid url
-                        if (et_snapchat.text.isNotEmpty()) {
-//                        et_snapchat.setError("Invalid Url")
-                        }
-                        follow_link_et_snapchat.visibility = View.INVISIBLE
+                    } catch (ex: Exception) {
+                        println("Printingxx : Exception MKIKJO49   $ex")
                     }
+
+
                 }
 
                 override fun afterTextChanged(s: Editable) {}
@@ -402,8 +458,17 @@ class AddFragment : Fragment() {
 //        getdatafromfirebase()
 
 
-
             btn_save_data.setOnClickListener {
+
+                try {
+
+                    val imm =
+                        requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                    imm.hideSoftInputFromWindow(linearLayout1.windowToken, 0)
+                } catch (ex: Exception) {
+                    println("Printingxx : Exception HJUI782   $ex")
+                }
+
 
                 if (et_first_name.text.isNotEmpty() && et_last_name.text.isNotEmpty()) {
 
@@ -467,11 +532,11 @@ class AddFragment : Fragment() {
             var personalWebsite = et_personal_website.text
 
 
-//            var businessEmail = et_business_email.text
-//            var businessFirstName = et_business_first_name.text
-//            var businessLastName = et_business_last_name.text
-//            var businessPhone = et_business_phone.text
-//            var businessWebsite = et_business_website.text
+            var businessEmail = et_business_email.text
+            var businessFirstName = et_business_first_name.text
+            var businessLastName = et_business_last_name.text
+            var businessPhone = et_business_phone.text
+            var businessWebsite = et_business_website.text
 
 
             var btc = et_btc.text
@@ -483,7 +548,7 @@ class AddFragment : Fragment() {
 //            var twitter = et_twitter.text
 
 
-//            var Business_check=true
+            var Business_check = true
             var Crypto_check = true
             var Me_check = true
 //            var Socail_check=true
@@ -508,13 +573,35 @@ class AddFragment : Fragment() {
                     //  println("Printingx DataSnapshot = $p0")
 
 
-//                    ref.child("Business").child("businessEmail").setValue("$businessEmail")
-//                    ref.child("Business").child("businessFirstName").setValue("$businessFirstName")
-//                    ref.child("Business").child("businessLastName").setValue("$businessLastName")
-//                    ref.child("Business").child("businessPhone").setValue("$businessPhone")
-//                    ref.child("Business").child("businessWebsite").setValue("$businessWebsite")
-//                    ref.child("Business").child("isEmpty").setValue(Business_check)
+                    if (businessEmail.isNotEmpty()
+                        || businessFirstName.isNotEmpty()
+                        || businessLastName.isNotEmpty()
+                        || businessPhone.isNotEmpty()
+                        || businessWebsite.isNotEmpty()
+                    ) {
+                        ref.child("Business").child("isEmpty").setValue(false)
 
+                        ref.child("Business").child("businessEmail")
+                            .setValue(businessEmail.toString())
+                        ref.child("Business").child("businessFirstName")
+                            .setValue(businessFirstName.toString())
+                        ref.child("Business").child("businessLastName")
+                            .setValue(businessLastName.toString())
+                        ref.child("Business").child("businessPhone")
+                            .setValue(businessPhone.toString())
+                        ref.child("Business").child("businessWebsite")
+                            .setValue(businessWebsite.toString())
+
+                    } else {
+                        ref.child("Business").child("isEmpty").setValue(true)
+
+                        ref.child("Business").child("businessEmail").setValue("")
+                        ref.child("Business").child("businessFirstName").setValue("")
+                        ref.child("Business").child("businessLastName").setValue("")
+                        ref.child("Business").child("businessPhone").setValue("")
+                        ref.child("Business").child("businessWebsite").setValue("")
+
+                    }
 
                     if (et_btc.text.isNotEmpty()) {
                         ref.child("BTC").child("btc")
@@ -673,7 +760,7 @@ class AddFragment : Fragment() {
         try {
 
 
-            myRef?.child(user_id)!!.addValueEventListener(object : ValueEventListener {
+            myRef?.child(user_id)!!.addListenerForSingleValueEvent(object : ValueEventListener {
 
                 override fun onDataChange(p0: DataSnapshot) {
 
@@ -684,7 +771,7 @@ class AddFragment : Fragment() {
                             Socail = xx.child("Socail").value
                             Crypto = xx.child("Crypto").value
                             Me = xx.child("Me").value
-//                            Business = xx.child("Business").value
+                            Business = xx.child("Business").value
 
                             twitter = xx.child("Twitter").child("twitter").value
                             twitter_isEmpty = xx.child("Twitter").child("isEmpty").value
@@ -727,17 +814,17 @@ class AddFragment : Fragment() {
                             me_isEmpty = xx.child("Me").child("isEmpty").value
 
 
-//                            business_businessFirstName =
-//                                xx.child("Business").child("businessFirstName").value
-//                            business_businessPhone =
-//                                xx.child("Business").child("businessPhone").value
-//                            business_businessWebsite =
-//                                xx.child("Business").child("businessWebsite").value
-//                            business_businessLastName =
-//                                xx.child("Business").child("businessLastName").value
-//                            business_businessEmail =
-//                                xx.child("Business").child("businessEmail").value
-//                            business_isEmpty = xx.child("Business").child("isEmpty").value
+                            business_businessFirstName =
+                                xx.child("Business").child("businessFirstName").value
+                            business_businessPhone =
+                                xx.child("Business").child("businessPhone").value
+                            business_businessWebsite =
+                                xx.child("Business").child("businessWebsite").value
+                            business_businessLastName =
+                                xx.child("Business").child("businessLastName").value
+                            business_businessEmail =
+                                xx.child("Business").child("businessEmail").value
+                            business_isEmpty = xx.child("Business").child("isEmpty").value
 
 
 //                            println("Printingx --------------------------------------------------")
@@ -759,11 +846,24 @@ class AddFragment : Fragment() {
                             et_personal_website.setText(me_personalWebsite.toString())
 
 
-//                            et_business_email.setText(business_businessEmail.toString())
-//                            et_business_first_name.setText(business_businessFirstName.toString())
-//                            et_business_phone.setText(business_businessPhone.toString())
-//                            et_business_website.setText(business_businessWebsite.toString())
-//                            et_business_last_name.setText(business_businessLastName.toString())
+
+                            if (business_businessEmail != null)
+                                et_business_email.setText(business_businessEmail.toString())
+
+                            if (business_businessFirstName != null)
+                                et_business_first_name.setText(business_businessFirstName.toString())
+
+                            if (business_businessPhone != null)
+                                et_business_phone.setText(business_businessPhone.toString())
+
+                            if (business_businessWebsite != null)
+                                et_business_website.setText(business_businessWebsite.toString())
+
+                            if (business_businessLastName != null)
+                                et_business_last_name.setText(business_businessLastName.toString())
+
+
+
 
                             et_facebook.setText(facebook.toString())
                             et_instagram.setText(instgram.toString())
@@ -815,12 +915,10 @@ class AddFragment : Fragment() {
                 }
             }
             return true
-        }
-        catch (ex:Exception){
+        } catch (ex: Exception) {
             println("Printingxx : Exception UGHU93   $ex")
             return false
         }
-
 
 
     }

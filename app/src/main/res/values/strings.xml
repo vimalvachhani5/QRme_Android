@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">QRme</string>
+
+    <!-- Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). -->
+    <string name="facebook_application_id" translatable="false">191629453075162</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb191629453075162</string>
+
+
+    <string name="link_rate_app_link">https://play.google.com/store/apps/details?id=com.berisco.qrme</string>
+
+    <string name="link_faq">https://qrmeapp.com/faq.html</string>
+    <string name="link_feedback">https://qrmeapp.com/feedback.html</string>
+    <string name="link_privacy_policy">https://qrmeapp.com/privacypolicy.html</string>
+    <string name="link_terms">https://qrmeapp.com/terms.html</string>
+    <string name="link_share_app_link">https://qrmeapp.com/?id=uniqueuserid</string>
+
+<!--    <string name="link_">XXXXXXXXXXXX</string>-->
+
+
+
+    <string name="first_name">First Name *</string>
+
+    <string name="last_name">Last Name *</string>
+    <string name="phone">Phone</string>
+    <string name="email">Email</string>
+    <string name="website">Website</string>
+
+    <string name="facebook">Facebook</string>
+    <string name="instagram">Instagram</string>
+    <string name="twitter">Twitter</string>
+
+    <string name="btc">BTC</string>
+    <string name="eth">ETH</string>
+
+    <string name="add">Add</string>
+
+<!--    <string name="XXXXXXXXXXXX">XXXXXXXXXXXX</string>-->
+    <string name="title_activity__bottom__nav__bar">MainActivity</string>
+
+
+    <string name="title_home">Home</string>
+    <string name="title_add">Add</string>
+    <string name="title_settings">Settings</string>
+
+
+</resources>

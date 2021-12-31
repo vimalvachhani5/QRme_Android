@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity_Add_Accounts"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_home">
+
+        <RelativeLayout
+            android:id="@+id/ac_bar_top"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/black">
+
+
+
+            <Button
+                android:id="@+id/tv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back"
+                android:fontFamily="sans-serif"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:layout_alignParentLeft="true"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                />
+
+
+            <Button
+                android:id="@+id/btn_save_data"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:fontFamily="sans-serif"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:layout_alignParentRight="true"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                />
+
+
+        </RelativeLayout>
+
+        <ScrollView
+
+            android:id="@+id/scrollView"
+            android:layout_below="@+id/ac_bar_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+<!--
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:id="@+id/tv_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_centerVertical="true"
+                        android:text="Back"
+                        android:textSize="18dp" />
+                </RelativeLayout>
+                -->
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_centerVertical="true"
+                        android:text="Me"
+                        android:textSize="16dp" />
+                </RelativeLayout>
+
+                <EditText
+
+                    android:id="@+id/et_first_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:inputType="textPersonName"
+                    android:hint="@string/first_name"
+                    android:layout_marginBottom="5dp"
+
+                    />
+
+                <EditText
+
+                    android:id="@+id/et_last_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+
+                    android:inputType="textPersonName"
+                    android:layout_marginRight="20dp"
+                    android:hint="@string/last_name"
+                    android:layout_marginBottom="5dp"
+                    />
+
+                <EditText
+                        android:id="@+id/et_personal_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:inputType="phone"
+                    android:layout_marginRight="20dp"
+                    android:hint="@string/phone"
+                    android:layout_marginBottom="5dp"
+                    />
+
+                <EditText
+
+                        android:id="@+id/et_personal_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/email"
+                    android:layout_marginBottom="5dp"
+                    />
+
+
+                <!--                    <EditText-->
+                <!--                        android:id="@+id/et_personal_website"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_marginLeft="20dp"-->
+                <!--                        android:layout_marginRight="20dp"-->
+                <!--                        android:inputType="textUri"-->
+                <!--                        android:hint="@string/website"-->
+
+                <!--                        />-->
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/et_personal_website"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="50dp"
+
+                        android:hint="@string/website"
+                        android:inputType="textUri"
+                        android:layout_marginBottom="5dp"
+                        />
+
+                    <ImageView
+                        android:id="@+id/follow_link_et_personal_website"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="12dp"
+                        android:visibility="invisible"
+                        android:layout_marginRight="20dp"
+                        android:src="@drawable/icon_next"
+                        android:layout_alignParentRight="true"
+
+                        />
+                </RelativeLayout>
+
+
+
+<!--                Business
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_centerVertical="true"
+                        android:text="Business"
+                        android:textSize="16dp" />
+                </RelativeLayout>
+
+                <EditText
+                        android:id="@+id/et_business_first_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+
+                    android:inputType="textPersonName"
+                    android:hint="@string/first_name"
+                    android:layout_marginBottom="5dp"
+
+                    />
+
+                <EditText
+                        android:id="@+id/et_business_last_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+
+                    android:inputType="textPersonName"
+                    android:hint="@string/last_name"
+                    android:layout_marginBottom="5dp"
+                    />
+
+                <EditText
+                        android:id="@+id/et_business_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:inputType="phone"
+                    android:hint="@string/phone"
+                    android:layout_marginBottom="5dp"
+                    />
+
+                <EditText
+                        android:id="@+id/et_business_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:inputType="textEmailAddress"
+                    android:hint="@string/email"
+                    android:layout_marginBottom="5dp"
+                    />
+
+                <EditText
+                        android:id="@+id/et_business_website"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:inputType="textUri"
+                    android:hint="@string/website"
+
+                    />
+
+                -->
+
+
+<!--                Social-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_centerVertical="true"
+                        android:text="Social"
+                        android:textSize="16dp" />
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/et_facebook"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="50dp"
+
+                        android:hint="www.facebook.com/"
+
+                        android:inputType="textUri"
+                        android:layout_marginBottom="5dp"
+                        />
+<!--                    android:hint="@string/facebook"-->
+                    <ImageView
+                        android:id="@+id/follow_link_et_facebook"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="12dp"
+                        android:visibility="invisible"
+                        android:layout_marginRight="20dp"
+                        android:src="@drawable/icon_next"
+                        android:layout_alignParentRight="true"
+
+                        />
+                </RelativeLayout>
+
+<!--
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+
+                    <ImageView
+                        android:id="@+id/follow_link_"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginRight="20dp"
+                        android:visibility="invisible"
+                        android:src="@drawable/icon_next"
+                        android:layout_alignParentRight="true"
+                        />
+                </RelativeLayout>
+                -->
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/et_instagram"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="50dp"
+
+                        android:hint="www.instagram.com/"
+                        android:inputType="textUri"
+                        android:layout_marginBottom="5dp"
+                        />
+<!--                    android:hint="@string/instagram"-->
+                    <ImageView
+                        android:id="@+id/follow_link_et_instagram"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginRight="20dp"
+                        android:visibility="invisible"
+                        android:src="@drawable/icon_next"
+                        android:layout_alignParentRight="true"
+                        />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/et_twitter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:hint="www.twitter.com/"
+                        android:layout_marginRight="50dp"
+
+                        android:inputType="textUri"
+                        android:layout_marginBottom="5dp"
+                        />
+<!--                    android:hint="@string/twitter"-->
+                    <ImageView
+                        android:id="@+id/follow_link_et_twitter"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginRight="20dp"
+                        android:visibility="invisible"
+                        android:src="@drawable/icon_next"
+                        android:layout_alignParentRight="true"
+                        />
+                </RelativeLayout>
+
+
+<!--                new here=============-->
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/et_linkedin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="50dp"
+
+                        android:hint="www.linkedin.com/"
+                        android:inputType="textUri"
+                        android:layout_marginBottom="5dp"
+                        />
+<!--                    android:hint="LinkedIn"-->
+                    <ImageView
+                        android:id="@+id/follow_link_et_linkedin"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginRight="20dp"
+                        android:visibility="invisible"
+                        android:src="@drawable/icon_next"
+                        android:layout_alignParentRight="true"
+                        />
+                </RelativeLayout>
+
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content">-->
+
+<!--                    <EditText-->
+<!--                        android:id="@+id/et_discord"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginLeft="20dp"-->
+<!--                        android:layout_marginRight="50dp"-->
+<!--                        android:hint="Discord"-->
+<!--                        android:inputType="textUri"-->
+<!--                        android:layout_marginBottom="5dp"-->
+<!--                        />-->
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/follow_link_et_discord"-->
+<!--                        android:layout_width="25dp"-->
+<!--                        android:layout_height="25dp"-->
+<!--                        android:layout_marginTop="12dp"-->
+<!--                        android:layout_marginRight="20dp"-->
+<!--                        android:visibility="invisible"-->
+<!--                        android:src="@drawable/icon_next"-->
+<!--                        android:layout_alignParentRight="true"-->
+<!--                        />-->
+<!--                </RelativeLayout>-->
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/et_whatsapp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="50dp"
+
+                        android:inputType="textUri"
+                        android:hint="wa.me/"
+                        />
+<!--                    android:hint="Whatsapp"-->
+                    <ImageView
+                        android:id="@+id/follow_link_et_whatsapp"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginRight="20dp"
+                        android:visibility="invisible"
+                        android:src="@drawable/icon_next"
+                        android:layout_alignParentRight="true"
+                        />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/et_snapchat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="50dp"
+
+                        android:hint="www.Snapchat.com/add/"
+                        android:inputType="textUri"
+                        android:layout_marginBottom="5dp"
+                        />
+<!--                    android:hint="Snapchat"-->
+                    <ImageView
+                        android:id="@+id/follow_link_et_snapchat"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginRight="20dp"
+                        android:visibility="invisible"
+                        android:src="@drawable/icon_next"
+                        android:layout_alignParentRight="true"
+                        />
+                </RelativeLayout>
+
+
+<!--                new here ends=============-->
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:layout_centerVertical="true"
+                        android:text="Crypto Wallet ID"
+                        android:textSize="16dp" />
+                </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/et_btc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:hint="@string/btc"
+                    android:inputType="text"
+                    android:layout_marginBottom="5dp"
+                    />
+
+                <EditText
+                        android:id="@+id/et_eth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:hint="@string/eth"
+                    android:inputType="text"
+
+                    />
+
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:padding="25dp">-->
+<!--                    <Button-->
+<!--                        android:id="@+id/btn_save_data"-->
+<!--                        android:layout_width="150dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginLeft="25dp"-->
+<!--                        android:layout_alignParentRight="true"-->
+<!--                        android:text="Save"-->
+<!--                        android:textAllCaps="false"-->
+<!--                        />-->
+
+
+<!--                </RelativeLayout>-->
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

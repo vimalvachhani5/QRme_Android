@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/bg_cv">
+
+
+    <!--                 card 1 starts +++++++++++++++++++++++++++ -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cp_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        app:cardBackgroundColor="@color/white"
+
+        app:cardCornerRadius="16dp"
+        app:cardElevation="1dp"
+        app:cardMaxElevation="2dp"
+
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cp_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.berisco.qrme.QRmeClasses.SquareImageView
+                    android:id="@+id/imageview_user_post_home_customview"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:adjustViewBounds="true"
+                    tools:ignore="MissingConstraints" />
+
+
+                <TextView
+                    android:id="@+id/tv_acc_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="25dp"
+                    android:text="-"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/tv_acc_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_acc_name"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="5dp"
+                    android:text="-"
+                    android:textSize="16dp" />
+
+            </RelativeLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+    <!--                 card 1 ends =========================== -->
+
+
+
+
+</RelativeLayout>

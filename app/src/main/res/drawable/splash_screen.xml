@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item >
+
+        <shape android:shape="rectangle" >
+
+            <gradient
+                android:angle="270"
+                android:centerX="5%"
+                android:startColor="@color/black"
+                android:endColor="@color/black"
+                android:type="linear"
+                />
+
+
+            <corners android:radius="10dp"/>
+        </shape>
+
+
+    </item>
+
+    <item android:drawable="@drawable/logo_qr_me"
+        android:gravity="center_horizontal|center_vertical"
+        android:width="100dp"
+        android:height="100dp">
+
+    </item>
+
+
+    <!--    <item>-->
+    <!--        <inset android:drawable="@drawable/bg_splash_new"-->
+    <!--            android:insetRight="0dp"-->
+    <!--            android:insetTop="0dp"-->
+    <!--            android:insetLeft="0dp"-->
+    <!--            android:insetBottom="0dp" />-->
+    <!--    </item>-->
+
+
+
+
+</layer-list>
+

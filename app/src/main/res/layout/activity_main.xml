@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_cv"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_home"
+      >
+
+<!--
+        <RelativeLayout
+            android:id="@+id/top_add_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floating_action_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+
+                android:layout_centerVertical="true"
+                android:backgroundTint="@color/fab_color"
+
+                android:src="@drawable/ic_launcher_background"
+
+                />
+
+
+        </RelativeLayout>
+
+         android:layout_below="@+id/top_add_tab"
+        -->
+
+
+        <RelativeLayout
+            android:id="@+id/ac_bar_top"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/black">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_centerInParent="true"
+                android:textSize="18dp"
+                />
+
+            <Button
+                android:id="@+id/textButton_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:fontFamily="sans-serif"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:layout_alignParentLeft="true"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                />
+
+            <Button
+                android:id="@+id/textButton_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:fontFamily="sans-serif"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:textAllCaps="true"
+                android:layout_alignParentRight="true"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                />
+
+        </RelativeLayout>
+
+
+        <ScrollView
+
+            android:id="@+id/scrollView"
+            android:layout_below="@+id/ac_bar_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+
+
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerview_best_selling_explore"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:orientation="horizontal"
+                        android:overScrollMode="never"
+                        android:nestedScrollingEnabled="false"
+
+                        />
+
+
+                </RelativeLayout>
+
+
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

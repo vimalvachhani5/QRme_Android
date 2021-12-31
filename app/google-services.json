@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "321183369380",
+    "firebase_url": "https://qrme-7a2db-default-rtdb.firebaseio.com",
+    "project_id": "qrme-7a2db",
+    "storage_bucket": "qrme-7a2db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:321183369380:android:8f4cd0e4ac4dbdc584fe31",
+        "android_client_info": {
+          "package_name": "com.berisco.qrme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "321183369380-comp0obd0oolk68jel6pi4987tv3fgqj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.berisco.qrme",
+            "certificate_hash": "b87eaad9f6f8f580628d2846a78656b2ef72095c"
+          }
+        },
+        {
+          "client_id": "321183369380-i3n2uca9c9tag14c5uue5qit40agprt1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdo2H_HRieSBWJ1cg0-UsLfN0RDtSdPIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "321183369380-i3n2uca9c9tag14c5uue5qit40agprt1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "321183369380-8koenn72mjg1igdjhrae1fee25ice5s6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.QRmeiOS"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
